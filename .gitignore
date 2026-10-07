@@ -1,7 +1,7 @@
 # Vim
 *~
 *.sw[p_]
-
+.venv
 # IntelliJ IDEA
 *.idea
 
