@@ -2,9 +2,9 @@
 layout: home
 author_profile: true
 classes: wide
+title: "👋 ¡Hola, soy Manuel!"
 ---
 
-## 👋 ¡Hola, soy Manuel!
 
 Bienvenido a mi espacio digital. Soy un apasionado del desarrollo de software y la tecnología, actualmente en continua formación y en busca de mi primera oportunidad profesional en el sector para aportar valor, seguir creciendo y construir aplicaciones robustas, limpias y funcionales. Aquí comparto mi trayectoria, mis aprendizajes técnicos y los proyectos reales en los que he estado trabajando.
 
