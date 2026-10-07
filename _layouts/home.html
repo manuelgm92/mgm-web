@@ -1,46 +1,6 @@
 ---
 layout: archive
-classes: wide
 ---
-
 {%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 
 {{ content }}
-<!--
----
-layout: splash
-permalink: /
----
--->
-
-<div class="splash__intro">
-  <h2>¡Hola! 👋 Soy Manuel</h2>
-  <p>Bienvenido a mi espacio personal. Actualmente soy <strong>Junior Developer</strong> apasionado por la tecnología y el desarrollo web.</p>
-  
-  <p>
-    <a href="/cv/" class="btn btn--primary btn--large">Ver mi Currículum</a>
-    <a href="https://github.com/manuelgm92" class="btn btn--inverse btn--large"><i class="fab fa-github"></i> GitHub</a>
-  </p>
-</div>
-
-<div class="feature__wrapper">
-  <!-- Puedes añadir secciones de características o proyectos destacados si lo deseas -->
-  <div class="archive__subtitle">Sobre mí</div>
-  <p>Actualmente me encuentro aprendiendo y construyendo proyectos con Ngix, Jekyll, Git y tecnologías web modernas. Aquí comparto parte de mi trayectoria, mis aprendizajes y mi evolución profesional.</p>
-</div>
-
-<h3 class="archive__subtitle">{{ site.data.ui-text[locale].recent_posts | default: "Recent Posts" }}</h3>
-<!--
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html locale=locale entries=posts type=entries_layout %}
-</div>
-
-{% include paginator.html locale=locale %}
--->
