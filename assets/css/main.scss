@@ -28,3 +28,13 @@
 .initial-content p {
   text-align: justify;
 }
+
+/* Aumentar tamaño de la foto de perfil en la barra lateral */
+.sidebar .author__avatar img {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
