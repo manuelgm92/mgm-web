@@ -9,12 +9,12 @@
 
 /* Reducir la altura de la imagen de cabecera en los proyectos */
 .page__hero {
-  max-height: 300px; /* Puedes cambiar este valor a 250px o 200px si lo quieres aún más pequeño */
+  max-height: 300px;
   overflow: hidden;
 
   img {
     max-height: 300px;
-    object-fit: cover; /* Asegura que la imagen no se deforme al recortarse */
+    object-fit: cover;
     width: 100%;
   }
 }
@@ -37,4 +37,40 @@
   max-height: 160px !important;
   object-fit: cover;
   border-radius: 50%;
+}
+
+
+
+/* --- 3. DISEÑO DE 3 COLUMNAS: EXCLUSIVO PARA POSTS CON ÍNDICE (TOC) --- */
+@media screen and (min-width: 1024px) {
+  body:has(aside.sidebar__right) {
+    #main {
+      display: grid !important;
+      grid-template-columns: 240px minmax(0, 1fr) 280px !important;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .sidebar {
+      grid-column: 1;
+      position: sticky;
+      top: 2rem;
+    }
+
+    article.page {
+      grid-column: 2;
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+    }
+
+    aside.sidebar__right {
+      display: block !important;
+      grid-column: 3;
+      position: sticky;
+      top: 2rem;
+      width: 280px !important;
+      margin-top: 1.5rem !important;
+    }
+  }
 }

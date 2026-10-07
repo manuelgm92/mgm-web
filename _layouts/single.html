@@ -19,7 +19,8 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
+<!-- Detecta automáticamente si hay TOC para aplicar la clase wide y activar las 3 columnas -->
+<div id="main" role="main" class="{% if page.toc %}wide{% endif %}">
   {% include sidebar.html locale=locale %}
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
@@ -41,14 +42,6 @@ layout: default
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
-        {% if page.toc %}
-          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-            <nav class="toc" aria-label="Table of contents">
-              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "On this page" }}</h4></header>
-              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
-            </nav>
-          </aside>
-        {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
@@ -77,6 +70,16 @@ layout: default
       {% endif %}
     {% endif %}
   </article>
+
+  <!-- Índice (TOC) a la derecha -->
+  {% if page.toc %}
+    <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+      <nav class="toc" aria-label="Table of contents">
+        <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[locale].toc_label | default: "On this page" }}</h4></header>
+        {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+      </nav>
+    </aside>
+  {% endif %}
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
