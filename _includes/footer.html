@@ -17,9 +17,12 @@
       {% endfor %}
     {% endif %}
 
-    {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {{ site.data.ui-text[locale].feed_label | default: "Feed" }}</a></li>
-    {% endunless %}
+    {% comment %} Buscamos dinámicamente el enlace de LinkedIn definido en el autor o footer {% endcomment %}
+    {% for link in site.author.links %}
+      {% if link.label == "LinkedIn" %}
+        <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fab fa-fw fa-linkedin' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+      {% endif %}
+    {% endfor %}
   </ul>
 </div>
 {% endif %}
