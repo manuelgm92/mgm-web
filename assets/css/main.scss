@@ -1,6 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
-search: false
+# Only the main Sass file needs front matter (the dashes are enough) search: false
 ---
 
 @charset "utf-8";
@@ -20,7 +19,12 @@ search: false
   }
 }
 
-/* Justificar el texto de los párrafos en el contenido de las páginas */
-.page__content p {
+/* Justificar el texto de los párrafos en todo el sitio web y la página de inicio */
+.page__content p, 
+.archive__item p, 
+.page__excerpt p, 
+.entry p,
+.splash__content p,
+.initial-content p {
   text-align: justify;
 }
