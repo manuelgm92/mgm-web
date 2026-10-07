@@ -74,3 +74,35 @@
     }
   }
 }
+
+/* --- DISEÑO RESPONSIVO: EL ÍNDICE ARRIBA EN MÓVILES Y TABLETS --- */
+@media screen and (max-width: 1023px) {
+  #main {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 1. La barra lateral de perfil va primero */
+  .sidebar {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 2. El índice (TOC) sube a la segunda posición */
+  aside.sidebar__right {
+    order: 2 !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 1rem 0 !important;
+  }
+
+  /* 3. El contenido principal del post va en tercera posición */
+  article.page {
+    order: 3 !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
