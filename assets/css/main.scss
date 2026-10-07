@@ -7,3 +7,20 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* Reducir la altura de la imagen de cabecera en los proyectos */
+.page__hero {
+  max-height: 300px; /* Puedes cambiar este valor a 250px o 200px si lo quieres aún más pequeño */
+  overflow: hidden;
+
+  img {
+    max-height: 300px;
+    object-fit: cover; /* Asegura que la imagen no se deforme al recortarse */
+    width: 100%;
+  }
+}
+
+/* Justificar el texto de los párrafos en el contenido de las páginas */
+.page__content p {
+  text-align: justify;
+}
